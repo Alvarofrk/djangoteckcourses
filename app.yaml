@@ -1,0 +1,13 @@
+runtime: python311  # Cambia la versión de Python si usas otra
+
+entrypoint: gunicorn -b :$PORT config.wsgi
+
+handlers:
+  - url: /static
+    static_dir: static
+
+  - url: /.*
+    script: auto
+
+env_variables:
+  DJANGO_SETTINGS_MODULE: "config.settings"
