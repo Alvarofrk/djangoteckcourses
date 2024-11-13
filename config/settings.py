@@ -114,13 +114,9 @@ WSGI_APPLICATION = "config.wsgi.application"
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'djangobd',               # Nombre de la base de datos en Cloud SQL
-        'USER': 'alvarofrk',                   # Usuario configurado en Cloud SQL
-        'PASSWORD': '123',      # Contraseña del usuario en Cloud SQL
-        'HOST': '34.176.200.105',         # IP pública de la instancia
-        'PORT': '5432',                   # Puerto por defecto de PostgreSQL
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
     }
 }
 
